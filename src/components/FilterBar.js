@@ -14,7 +14,7 @@ const FilterBar = ({
     from: "",
     to: "",
   });
-
+ 
   const handleInput = (field) => (event) => {
     const { value } = event.target;
 
@@ -24,7 +24,7 @@ const FilterBar = ({
     });
 
     switch (field) {
-      case "name":
+       case "name":
         onNameFilter(value);
         break;
       case "email":
@@ -37,7 +37,7 @@ const FilterBar = ({
         onDateFilter(value, "from");
         break;
       case "to":
-        break;
+        break; 
       default:
         break;
     }

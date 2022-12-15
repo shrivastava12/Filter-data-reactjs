@@ -1,11 +1,11 @@
 import { useState } from "react";
 import dayjs from "dayjs";
-
 import "./App.css";
 import PersonItem from "./components/PersonItem";
 import { data } from "./MOCK_DATA";
 import FilterBar from "./components/FilterBar";
-
+import MutiSelect from "./components/MutiSelect";
+import Form from "./components/Form";
 const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
 const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
 dayjs.extend(isSameOrBefore);
@@ -17,7 +17,7 @@ function App() {
   const generateGenderDataForDropdown = () => {
     return [...new Set(data.map((item) => item.gender))];
   };
-
+ 
   const handleFilterName = (name) => {
     const filteredData = data.filter((item) => {
       const fullName = `${item.first_name} ${item.last_name}`;
@@ -27,7 +27,7 @@ function App() {
     });
 
     setData(filteredData);
-  };
+  }; 
 
   const handleFilterEmail = (email) => {
     const filteredData = data.filter((item) => {
@@ -61,7 +61,9 @@ function App() {
 
   return (
     <div className="container">
-      <div className="row">
+      <MutiSelect/>
+      <Form/>
+      {/* <div className="row">
         <div className="col-sm-3">
           <FilterBar
             genders={generateGenderDataForDropdown()}
@@ -78,7 +80,7 @@ function App() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
