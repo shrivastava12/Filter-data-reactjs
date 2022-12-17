@@ -6,6 +6,7 @@ import { data } from "./MOCK_DATA";
 import FilterBar from "./components/FilterBar";
 import MutiSelect from "./components/MutiSelect";
 import Form from "./components/Form";
+import Main from "./components/Main";
 const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
 const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
 dayjs.extend(isSameOrBefore);
@@ -61,8 +62,9 @@ function App() {
 
   return (
     <div className="container">
-      <MutiSelect/>
-      <Form/>
+      <Main/>
+      {/* <MutiSelect/>
+      <Form/> */}
       {/* <div className="row">
         <div className="col-sm-3">
           <FilterBar
